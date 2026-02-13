@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Database</title>
+    <!-- external CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="frame">
+        <!-- SIGN IN PANEL (default visible) -->
+        <div id="signInPanel" class="card">
+            <h1>sign in</h1>
+            
+            <label for="signInUsername">username</label>
+            <input type="text" id="signInUsername" placeholder="e.g. alex" autocomplete="off">
+            
+            <label for="signInPassword">password</label>
+            <input type="password" id="signInPassword" placeholder="••••••••">
+            
+            <button id="signInBtn" class="btn">sign in →</button>
+            
+            <!-- feedback message - initially hidden -->
+            <div id="signInMessage" class="message" style="display: none;"></div>
+            
+            <div class="separator"></div>
+            
+            <button id="goToCreateBtn" class="btn outline">+ create account</button>
+            <div class="info-hint">supabase · postgres · persistent</div>
+        </div>
+
+        <!-- CREATE ACCOUNT PANEL (hidden by default) -->
+        <div id="createPanel" class="card" style="display: none;">
+            <h1>create account</h1>
+            
+            <label for="createUsername">username</label>
+            <input type="text" id="createUsername" placeholder="choose username" autocomplete="off">
+            
+            <label for="createPassword">password</label>
+            <input type="password" id="createPassword" placeholder="at least 4 characters">
+            
+            <button id="createAccountBtn" class="btn">create account</button>
+            
+            <!-- feedback message - initially hidden -->
+            <div id="createMessage" class="message" style="display: none;"></div>
+            
+            <div class="separator"></div>
+            
+            <button id="backToSignInBtn" class="btn outline">← back to sign in</button>
+        </div>
+        
+        <div class="footer-note">
+            ⚡ CRUD · create · read · verify
+        </div>
+    </div>
+
+    <!-- Supabase JS library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- external JS - your app logic -->
+    <script src="js/app.js"></script>
+</body>
+</html>
